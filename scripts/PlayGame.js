@@ -24,7 +24,8 @@ function playGame(image, difficulty) {
     if (difficulty === 'medium') scoreToWin = 6;
     if (difficulty === 'hard') scoreToWin = 9;
 
-    console.log(scoreToWin)
+    const asideEle = document.querySelector(`aside`);
+    asideEle.innerHTML = ` Wynik: ${score} / ${scoreToWin}`;
  
     image.classList.add('visible-opacity');
     image.classList.add('rotate');
