@@ -1,3 +1,5 @@
+import { mainFunction } from "./MainMemory.js";
+
 let score = 0;
 
 export function startGame(difficulty){
@@ -37,6 +39,9 @@ function playGame(image, difficulty) {
                 previousImage.classList.add(`pointers`);
                 previousImage = undefined;
                 score++;
+                if (score === scoreToWin){
+                    mainFunction();
+                }
 
             } else {
 

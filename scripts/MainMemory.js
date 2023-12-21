@@ -1,5 +1,11 @@
 import { renderStartingPage } from "./StartingPage.js";
 import { chooseDifficulty } from "./dfficulty.js";
 
-renderStartingPage();
-chooseDifficulty();
+export function mainFunction(){ //potrzebne do ponownego zagrania jesli sie wygra
+
+    renderStartingPage();
+    chooseDifficulty();
+
+}
+
+mainFunction();
