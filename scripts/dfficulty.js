@@ -1,3 +1,6 @@
+import { renderGame } from "./RenderGame.js";
+import { startGame } from "./memory.js";
+
 export function chooseDifficulty() {
 
     const levelButtons = document.querySelectorAll(`button`);
@@ -7,7 +10,8 @@ export function chooseDifficulty() {
         button.addEventListener('click', () => {
 
             const difficulty = button.dataset.level;
-
+            renderGame(difficulty);
+            startGame(difficulty);
             return difficulty;
 
         })

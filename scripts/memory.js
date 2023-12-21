@@ -4,35 +4,33 @@ import { renderGame } from "./RenderGame.js";
 
 let score = 0;
 
-//renderStartingPage();
+renderStartingPage();
+chooseDifficulty();
 
-
-
-//chooseDifficulty()
-
-
-renderGame('easy')
-
-function startGame(){
+export function startGame(difficulty){
 
     const imgElements = document.querySelectorAll(`.js-img`);
-
+    
     imgElements.forEach(image => {
         
         image.addEventListener('click', () => {
-            playGame(image);
+            playGame(image, difficulty);
         });
 
     });
 
 };
 
-startGame();
-
-
 let previousImage; // tworze poza funkcja by nie tworzylo nowego previousimage za kazdym wywolaniem funkcji dla image
-function playGame(image) {
+function playGame(image, difficulty) {
 
+    let scoreToWin;
+    if (difficulty === 'easy') scoreToWin = 3;
+    if (difficulty === 'medium') scoreToWin = 6;
+    if (difficulty === 'hard') scoreToWin = 9;
+
+    console.log(scoreToWin)
+ 
     image.classList.add('visible-opacity');
     image.classList.add('rotate');
 

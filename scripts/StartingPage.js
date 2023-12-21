@@ -1,13 +1,9 @@
 export default function renderStartingPage(){
-    const container = document.querySelector(`.filtr`);
+    const mainEle = document.querySelector(`main`);
 
     const html = ` 
-        <main>
         
-            <header>
-                <h1>Pudzilla Memory Game!</h1>
-                <h2>Choose difficulty level:</h2>
-            </header>
+            <h2>Choose difficulty level:</h2>
 
             <section>
 
@@ -17,9 +13,8 @@ export default function renderStartingPage(){
 
             </section>
 
-        </main>
     `
 
-    container.innerHTML = html;
+    mainEle.innerHTML = html;
 }
 

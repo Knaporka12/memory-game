@@ -12,7 +12,7 @@ export function renderGame(difficulty) {
 
     for (let i = 0; i < sectionsCount; i++){
 
-        html = `
+        html += `
             <section>
 
                 <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
@@ -24,11 +24,14 @@ export function renderGame(difficulty) {
 
             </section>
         `
-        mainEle.innerHTML += html;
-
+        mainEle.innerHTML = html;
+        
     }
 
+    mainEle.firstChild.textContent = ''; //usuwam ten napis 'undefined', jakis bug, nwm czym spowodowany wiec robie tak 
+
     
+
     const imgElements = document.querySelectorAll(`.js-img`);
 
     if (sectionsCount === 3) { //jeśli level hard to zmniejszam wielkosc zdjec
@@ -45,7 +48,6 @@ export function renderGame(difficulty) {
 
     for(let i = 0; i < requiredTableElements; i++) {
         duplicateCount.push(0);
-        console.log(duplicateCount)
     }
 
     imgElements.forEach((image) => {
@@ -60,7 +62,6 @@ export function renderGame(difficulty) {
 
         duplicateCount[imgNumber]++;
         image.src = `images/pudzian${imgNumber}.jpg`;
-        console.log(duplicateCount)
     
     });
 }
