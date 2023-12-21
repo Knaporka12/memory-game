@@ -22,3 +22,4 @@ export default function renderStartingPage(){
 
     container.innerHTML = html;
 }
+
