@@ -1,5 +1,5 @@
 import { renderGame } from "./RenderGame.js";
-import { startGame } from "./memory.js";
+import { startGame } from "./PlayGame.js";
 
 export function chooseDifficulty() {
 
@@ -15,7 +15,6 @@ export function chooseDifficulty() {
             return difficulty;
 
         })
-
         
     })
 }

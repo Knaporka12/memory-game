@@ -1,11 +1,4 @@
-import renderStartingPage from "./StartingPage.js";
-import { chooseDifficulty } from "./dfficulty.js";
-import { renderGame } from "./RenderGame.js";
-
 let score = 0;
-
-renderStartingPage();
-chooseDifficulty();
 
 export function startGame(difficulty){
 

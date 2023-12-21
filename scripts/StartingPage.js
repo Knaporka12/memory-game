@@ -1,4 +1,4 @@
-export default function renderStartingPage(){
+export function renderStartingPage(){
     const mainEle = document.querySelector(`main`);
 
     const html = ` 
