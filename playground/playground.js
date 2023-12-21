@@ -30,7 +30,7 @@
 const image = document.querySelectorAll(`.js-img`);
 
 console.log(typeof image[0])
-
+console.log(image[5] == image[4]);
 //console.log(image[1] === image[0]);
 
 image[0] = image[1];

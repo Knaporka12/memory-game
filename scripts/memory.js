@@ -15,35 +15,37 @@ renderGame('easy')
 
 function startGame(){
 
-    let previousImage;
-
     const imgElements = document.querySelectorAll(`.js-img`);
 
     imgElements.forEach(image => {
-
-        image.addEventListener('click', playGame);
+        
+        image.addEventListener('click', () => {
+            playGame(image);
+        });
 
     });
+
 };
 
 startGame();
 
-function playGame() {
+
+let previousImage; // tworze poza funkcja by nie tworzylo nowego previousimage za kazdym wywolaniem funkcji dla image
+function playGame(image) {
 
     image.classList.add('visible-opacity');
     image.classList.add('rotate');
 
     if (previousImage){
 
-        if (image.parentElement !== previousImage.parentElement){
+        if (previousImage !== image){
 
             if (previousImage.src === image.src){
 
-                previousImage.removeEventListener('click', playGame);
-                image.removeEventListener('click', playGame);
+                image.classList.add(`pointers`);
+                previousImage.classList.add(`pointers`);
                 previousImage = undefined;
                 score++;
-                console.log(score);
 
             } else {
 
@@ -58,13 +60,15 @@ function playGame() {
                     image.classList.remove('visible-opacity');
                     previousImage.classList.remove('visible-opacity');
                     previousImage = undefined;
+                    console.log(image);
+                    console.log(previousImage);
                 }, 1000);
 
             }
         }
     } else {
 
-        previousImage = image;            
+        previousImage = image;
         
     }
 

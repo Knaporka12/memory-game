@@ -48,6 +48,10 @@
     height: 160px;
     border-radius: 16px;
 }
+
+.pointers {
+    pointer-events: none;
+}
 /*koniec klas do dodania */
 
 /*strona wejściowa*/
