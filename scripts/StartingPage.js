@@ -1,9 +1,9 @@
 export function renderStartingPage(){
-    const mainEle = document.querySelector(`main`);
+    const mainEle = document.querySelector(`.js-main`);
 
     const html = ` 
         
-            <h2>Choose difficulty level:</h2>
+            <h2>Choose difficulty:</h2>
 
             <section>
 

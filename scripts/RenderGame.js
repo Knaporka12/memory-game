@@ -7,7 +7,7 @@ export function renderGame(difficulty) {
 
     const requiredTableElements = sectionsCount*3; //obliczam ile potrzeba elementów do tablicy żeby byla odpowiednia ilosc par kart
 
-    const mainEle = document.querySelector(`main`);
+    const mainEle = document.querySelector(`.js-main`);
     let html;
 
     for (let i = 0; i < sectionsCount; i++){
@@ -23,12 +23,24 @@ export function renderGame(difficulty) {
                 <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
 
             </section>
-        `
+        `;
         mainEle.innerHTML = html;
         
     }
 
-    mainEle.firstChild.textContent = ''; //usuwam ten napis 'undefined', jakis bug, nwm czym spowodowany wiec robie tak 
+    mainEle.firstChild.textContent = ''; //usuwam ten napis 'undefined', jakis bug, nwm czym spowodowany wiec robie tak
+    mainEle.innerHTML += `
+    
+        <aside class="js-aside"></aside>
+
+        <footer class="js-footer">
+
+            <button class="js-play-again-btn">
+                Play Again!
+            </button>
+
+        </footer>
+    `;
 
     
 

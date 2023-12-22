@@ -23,9 +23,6 @@ function playGame(image, difficulty) {
     if (difficulty === 'easy') scoreToWin = 3;
     if (difficulty === 'medium') scoreToWin = 6;
     if (difficulty === 'hard') scoreToWin = 9;
-
-    const asideEle = document.querySelector(`aside`);
-    asideEle.innerHTML = ` Wynik: ${score} / ${scoreToWin}`;
  
     image.classList.add('visible-opacity');
     image.classList.add('rotate');
@@ -40,9 +37,6 @@ function playGame(image, difficulty) {
                 previousImage.classList.add(`pointers`);
                 previousImage = undefined;
                 score++;
-                if (score === scoreToWin){
-                    mainFunction();
-                }
 
             } else {
 
@@ -69,4 +63,23 @@ function playGame(image, difficulty) {
         
     }
 
+    const asideEle = document.querySelector(`.js-aside`);
+    asideEle.innerHTML = `<h2>Score: ${score} / ${scoreToWin}</h2>` 
+
+    if (score === scoreToWin){
+        score = 0;
+        playAgain();
+    }
+
+}
+
+
+function playAgain() {
+
+    const playAgainBtn = document.querySelector(`.js-play-again-btn`);
+    playAgainBtn.classList.add('visible-display');
+
+    playAgainBtn.addEventListener('click', () => {
+        mainFunction();
+    })
 }
