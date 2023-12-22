@@ -3,7 +3,7 @@ import { startGame } from "./PlayGame.js";
 
 export function chooseDifficulty() {
 
-    const levelButtons = document.querySelectorAll(`button`);
+    const levelButtons = document.querySelectorAll(`.js-difficulty-button`);
 
     levelButtons.forEach((button) => {
 
