@@ -2,6 +2,9 @@ import { mainFunction } from "./MainMemory.js";
 
 let score = 0;
 
+let winsCount = JSON.parse(localStorage.getItem('winsCount'));
+if (!winsCount) winsCount = 0;
+
 export function startGame(difficulty){
 
     const imgElements = document.querySelectorAll(`.js-img`);
@@ -67,6 +70,8 @@ function playGame(image, difficulty) {
     asideEle.innerHTML = `<h2>Score: ${score} / ${scoreToWin}</h2>` 
 
     if (score === scoreToWin){
+        winsCount++;
+        localStorage.setItem('winsCount', JSON.stringify(winsCount));
         score = 0;
         playAgain();
     }
@@ -81,5 +86,5 @@ function playAgain() {
 
     playAgainBtn.addEventListener('click', () => {
         mainFunction();
-    })
-}
+    });
+};
