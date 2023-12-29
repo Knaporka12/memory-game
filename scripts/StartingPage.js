@@ -1,7 +1,12 @@
-export function renderStartingPage(){
+export let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
+if (!currentVersion) currentVersion = 'pudzian';
 
-    let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
-    if (!currentVersion) currentVersion = 'pudzian';
+export let winsCount = JSON.parse(localStorage.getItem('winsCount'));
+if (!winsCount) winsCount = 0;
+
+// exportowanie z local storage zeby moc uzywac w innych plikach 
+
+export function renderStartingPage(){
 
     const h1Ele = document.querySelector(`.js-h1`);
     if (currentVersion === 'pudzian'){
@@ -15,8 +20,7 @@ export function renderStartingPage(){
     containerEle.classList.add(`background-${currentVersion}`);
     
 
-    const winsCount = JSON.parse(localStorage.getItem('winsCount'));
-    if (!winsCount) winsCount = 0;
+    
 
     const mainEle = document.querySelector(`.js-main`);
 
@@ -27,15 +31,15 @@ export function renderStartingPage(){
                     Your Wins: ${winsCount}
                 </h2>
 
-                <p class = "unlock-count-p">Win ${10 - winsCount} more games to unlock premium version!</p>
+                <p class = "unlock-count-p">Win ${5 - winsCount} more games to unlock premium version!</p>
                 <button class = "toggle-version-btn js-toggle-version-btn"></button>
                 <p class = "choose-diff-p">Choose difficulty:</p>
             </article>
             <section>  
 
-                <button class = "js-difficulty-button"data-level="easy">Easy</button>
-                <button class = "js-difficulty-button"data-level="medium">Medium</button>
-                <button class = "js-difficulty-button"data-level="hard">Hard</button>
+                <button class = "js-difficulty-button" data-level="easy">Easy</button>
+                <button class = "js-difficulty-button" data-level="medium">Medium</button>
+                <button class = "js-difficulty-button" data-level="hard">Hard</button>
 
             </section>
 
@@ -44,7 +48,7 @@ export function renderStartingPage(){
 
     const versionBtn = document.querySelector(`.js-toggle-version-btn`);
 
-    if (winsCount <= 10) {
+    if (winsCount >= 5) {
 
         document.querySelector(`.unlock-count-p`).classList.add('unvisible-display');
         versionBtn.classList.add('visible-display');
@@ -61,8 +65,6 @@ export function renderStartingPage(){
 
 function changeVersion() {
 
-    let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
-
     if (currentVersion === 'pudzian'){
         currentVersion = 'sins'
     } else currentVersion = 'pudzian'
@@ -71,4 +73,3 @@ function changeVersion() {
 
     renderStartingPage();
 }
-

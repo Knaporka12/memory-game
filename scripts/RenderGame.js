@@ -1,3 +1,5 @@
+import { currentVersion } from "./StartingPage.js";
+
 export function renderGame(difficulty) {
 
     let sectionsCount;
@@ -15,12 +17,12 @@ export function renderGame(difficulty) {
         html += `
             <section>
 
-                <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
-                <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
-                <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
-                <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
-                <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
-                <figure><img src="images/tlo.jpg" alt="pudzilla" class="js-img"></figure>
+                <figure><img src="images/tlo-pudzian.jpg" alt="pudzilla" class="js-img"></figure>
+                <figure><img src="images/tlo-pudzian.jpg" alt="pudzilla" class="js-img"></figure>
+                <figure><img src="images/tlo-pudzian.jpg" alt="pudzilla" class="js-img"></figure>
+                <figure><img src="images/tlo-pudzian.jpg" alt="pudzilla" class="js-img"></figure>
+                <figure><img src="images/tlo-pudzian.jpg" alt="pudzilla" class="js-img"></figure>
+                <figure><img src="images/tlo-pudzian.jpg" alt="pudzilla" class="js-img"></figure>
 
             </section>
         `;
@@ -73,7 +75,7 @@ export function renderGame(difficulty) {
         } while (duplicateCount[imgNumber] >= 2)
 
         duplicateCount[imgNumber]++;
-        image.src = `images/pudzian${imgNumber}.jpg`;
+        image.src = `images/${currentVersion}${imgNumber}.jpg`;
     
     });
 }
