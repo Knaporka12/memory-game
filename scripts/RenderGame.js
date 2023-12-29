@@ -1,6 +1,7 @@
-import { currentVersion } from "./StartingPage.js";
-
 export function renderGame(difficulty) {
+
+    let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
+    if (!currentVersion) currentVersion = 'pudzian'; 
 
     let sectionsCount;
     if (difficulty === 'easy') sectionsCount = 1;

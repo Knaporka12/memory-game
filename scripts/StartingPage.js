@@ -1,12 +1,12 @@
-let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
-if (!currentVersion) currentVersion = 'pudzian';
-
-let winsCount = JSON.parse(localStorage.getItem('winsCount'));
-if (!winsCount) winsCount = 0;
-
-// exportowanie z local storage zeby moc uzywac w innych plikach 
+import { mainFunction } from "./MainMemory.js";
 
 export function renderStartingPage(){
+
+    let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
+    if (!currentVersion) currentVersion = 'pudzian';
+
+    let winsCount = JSON.parse(localStorage.getItem('winsCount'));
+    if (!winsCount) winsCount = 0;
 
     const h1Ele = document.querySelector(`.js-h1`);
     if (currentVersion === 'pudzian'){
@@ -19,9 +19,6 @@ export function renderStartingPage(){
     containerEle.classList.remove(`background-sins`);
     containerEle.classList.add(`background-${currentVersion}`);
     
-
-    
-
     const mainEle = document.querySelector(`.js-main`);
 
     const html = ` 
@@ -65,11 +62,13 @@ export function renderStartingPage(){
 
 function changeVersion() {
 
+    let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
+
     if (currentVersion === 'pudzian'){
         currentVersion = 'sins'
     } else currentVersion = 'pudzian'
 
     localStorage.setItem('currentVersion', JSON.stringify(currentVersion));
 
-    renderStartingPage();
+    mainFunction();
 }
