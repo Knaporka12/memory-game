@@ -1,7 +1,7 @@
-export let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
+let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
 if (!currentVersion) currentVersion = 'pudzian';
 
-export let winsCount = JSON.parse(localStorage.getItem('winsCount'));
+let winsCount = JSON.parse(localStorage.getItem('winsCount'));
 if (!winsCount) winsCount = 0;
 
 // exportowanie z local storage zeby moc uzywac w innych plikach 
