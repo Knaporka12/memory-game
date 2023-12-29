@@ -9,6 +9,7 @@ export function renderStartingPage(){
 
             <h2>
                 <span>Your Wins: ${winsCount}</span>
+                <span class = "unlock-count">Win ${10 - winsCount} more games to unlock premium version!</span>
                 Choose difficulty:
             </h2>
 

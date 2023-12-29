@@ -69,6 +69,12 @@ span{
     display: block;
 }
 
+.unlock-count { 
+    font-size: 2rem;
+    color: #fad25a;
+    margin-bottom: 40px;
+}
+
 button{
     font-size: 2rem;
     background-color: #4169E1;
