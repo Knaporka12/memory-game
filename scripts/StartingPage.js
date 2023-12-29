@@ -32,8 +32,28 @@ export function renderStartingPage(){
 
     const versionBtn = document.querySelector(`.js-toggle-version-btn`);
 
-    if (winsCount >= 10) versionBtn.classList.add('visible-display');
+    if (winsCount <= 10) {
+        versionBtn.classList.add('visible-display');
+        document.querySelector(`.unlock-count-p`).classList.add('unvisible-display');
+        versionBtn.addEventListener('click', () => {
+            changeVersion();
+        })
+    }
+    
     currentVersion === 'pudzian' ? versionBtn.innerHTML = 'Enable Premium version' : versionBtn.innerHTML = 'Disable premium version';
     
+}
+
+function changeVersion() {
+
+    let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
+
+    if (currentVersion === 'pudzian'){
+        currentVersion = 'sins'
+    } else currentVersion = 'pudzian'
+
+    localStorage.setItem('currentVersion', JSON.stringify(currentVersion));
+
+    renderStartingPage();
 }
 

@@ -45,6 +45,9 @@ h2, p {
 .visible-display {
     display: initial; 
 }
+.unvisible-display {
+    display: none;
+}
 .figure-level-hard {
     width: 10%;
     height: 164px;
@@ -80,6 +83,15 @@ article {
 
 article button {
     display: none;
+    background-color: #ebc44c;
+    color: black;
+    margin-top: 1.5rem;
+}
+
+article button:hover{
+    background-color: black;
+    color: #ebc44c;
+    transition: 0.4s ease-in-out;
 }
 
 .choose-diff-p { 
