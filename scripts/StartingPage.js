@@ -8,10 +8,11 @@ export function renderStartingPage(){
     const html = ` 
 
             <h2>
-                <span>Your Wins: ${winsCount}</span>
-                <span class = "unlock-count">Win ${10 - winsCount} more games to unlock premium version!</span>
-                Choose difficulty:
+                Your Wins: ${winsCount}
             </h2>
+
+            <p class = "unlock-count-p">Win ${10 - winsCount} more games to unlock premium version!</p>
+            <p class = "choose-diff-p">Choose difficulty:</p>
 
             <section>
 
