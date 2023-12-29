@@ -67,8 +67,10 @@ h2{
     color: white;
 }
 
-span{
-    display: block;
+article { 
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 .unlock-count-p { 
@@ -76,11 +78,15 @@ span{
     color: #fad25a;
 }
 
+article button {
+    display: none;
+}
+
 .choose-diff-p { 
     font-size: 2.5rem;
     color: white;
     font-weight: 600;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 button{
@@ -172,4 +178,5 @@ footer button{
     font-size: 2.25rem;
     padding: 1.5rem 3.5rem;
 }
+
 
