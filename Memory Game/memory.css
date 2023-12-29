@@ -42,12 +42,15 @@ h2, p {
 .visible-opacity {
     opacity: 1;
 }
+
 .visible-display {
     display: initial; 
 }
+
 .unvisible-display {
     display: none;
 }
+
 .figure-level-hard {
     width: 10%;
     height: 164px;
@@ -60,6 +63,14 @@ h2, p {
 
 .pointers {
     pointer-events: none;
+}
+
+.background-sins {
+    background-image: url(images/tlo-sins.jpg);
+}
+
+.background-pudzian {
+    background-image: url(images/tlo-pudzian.jpg);
 }
 /*koniec klas do dodania */
 
@@ -130,9 +141,10 @@ body{
 }
 
 .container{
-    background-image: url(images/tlo.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
+    transition: 1s all;
 }
 
 .filtr{

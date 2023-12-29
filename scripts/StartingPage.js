@@ -3,6 +3,18 @@ export function renderStartingPage(){
     let currentVersion = JSON.parse(localStorage.getItem('currentVersion'));
     if (!currentVersion) currentVersion = 'pudzian';
 
+    const h1Ele = document.querySelector(`.js-h1`);
+    if (currentVersion === 'pudzian'){
+        h1Ele.innerHTML = 'Pudzilla Memory Game!'
+    } else h1Ele.innerHTML = 'Sins Memory Game!'
+
+    const containerEle = document.querySelector(`.container`);
+
+    containerEle.classList.remove(`background-pudzian`);
+    containerEle.classList.remove(`background-sins`);
+    containerEle.classList.add(`background-${currentVersion}`);
+    
+
     const winsCount = JSON.parse(localStorage.getItem('winsCount'));
     if (!winsCount) winsCount = 0;
 
@@ -33,13 +45,16 @@ export function renderStartingPage(){
     const versionBtn = document.querySelector(`.js-toggle-version-btn`);
 
     if (winsCount <= 10) {
-        versionBtn.classList.add('visible-display');
+
         document.querySelector(`.unlock-count-p`).classList.add('unvisible-display');
+        versionBtn.classList.add('visible-display');
+
         versionBtn.addEventListener('click', () => {
             changeVersion();
         })
+
     }
-    
+
     currentVersion === 'pudzian' ? versionBtn.innerHTML = 'Enable Premium version' : versionBtn.innerHTML = 'Disable premium version';
     
 }
