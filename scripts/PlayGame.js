@@ -53,6 +53,10 @@ function playGame(image, difficulty) {
                 setTimeout(() => {
                     image.classList.remove('visible-opacity');
                     previousImage.classList.remove('visible-opacity');
+                    image.classList.remove('rotate');
+                    previousImage.classList.remove('rotate');
+                    image.classList.remove('rotate-back');
+                    previousImage.classList.remove('rotate-back');
                     previousImage = undefined;
                     console.log(image);
                     console.log(previousImage);
