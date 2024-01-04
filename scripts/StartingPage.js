@@ -8,6 +8,10 @@ export function renderStartingPage(){
     let winsCount = JSON.parse(localStorage.getItem('winsCount'));
     if (!winsCount) winsCount = 0;
 
+    let gameOrGames;
+    winsCount === 1 ? gameOrGames = 'game' : gameOrGames = 'games';
+    
+
     const h1Ele = document.querySelector(`.js-h1`);
     if (currentVersion === 'pudzian'){
         h1Ele.innerHTML = 'Pudzilla Memory Game!'
@@ -28,7 +32,7 @@ export function renderStartingPage(){
                     Your Wins: ${winsCount}
                 </h2>
 
-                <p class = "unlock-count-p">Win ${5 - winsCount} more games to unlock premium version!</p>
+                <p class = "unlock-count-p">Win ${5 - winsCount} more ${gameOrGames} to unlock premium version!</p>
                 <button class = "toggle-version-btn js-toggle-version-btn"></button>
                 <p class = "choose-diff-p">Choose difficulty:</p>
             </article>
