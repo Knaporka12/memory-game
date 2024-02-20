@@ -1,5 +1,5 @@
 [[redirects]]
 from = "/*"
-to = "./Memory-Game"
+to = "./Memory-Game/memory.html"
 status = 200
 
