@@ -1,0 +1,6 @@
+[[redirects]]
+from = "/*"
+to = "./Memory-Game/memory.html"
+status = 200
+
+
