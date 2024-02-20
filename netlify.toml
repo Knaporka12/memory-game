@@ -1,4 +1,5 @@
 [[redirects]]
-
-
+from = "/*"
+to = "./Memory-Game"
+status = 200
 
